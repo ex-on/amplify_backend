@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-exon-staging-122334-authRole",
+      "UnauthRoleArn": "arn:aws:iam::594107625744:role/amplify-exon-staging-122334-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::594107625744:role/amplify-exon-staging-122334-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-exon-staging-122334-deployment",
+      "UnauthRoleName": "amplify-exon-staging-122334-unauthRole",
+      "StackName": "amplify-exon-staging-122334",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:594107625744:stack/amplify-exon-staging-122334/5fd81e70-358e-11ec-8761-06c565c7c590",
+      "AmplifyAppId": "d3nyhw5ecp7tob"
+    }
+  }
+}
