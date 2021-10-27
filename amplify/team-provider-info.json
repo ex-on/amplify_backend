@@ -25,6 +25,12 @@
           "authRoleName": "Cognito_ExonAuth_Role",
           "unauthRoleArn": "arn:aws:iam::594107625744:role/Cognito_ExonUnauth_Role",
           "unauthRoleName": "Cognito_ExonUnauth_Role"
+        },
+        "exon": {
+          "userPoolId": "ap-northeast-2_EuYr8s0Rp",
+          "userPoolName": "exon-user-pool",
+          "webClientId": "6mf91uqnj2jj25et5hsrdbg8ur",
+          "nativeClientId": "6mf91uqnj2jj25et5hsrdbg8ur"
         }
       }
     }

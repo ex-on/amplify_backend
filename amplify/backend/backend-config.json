@@ -1,6 +1,6 @@
 {
   "auth": {
-    "exon1cfb5546": {
+    "exon": {
       "service": "Cognito",
       "serviceType": "imported",
       "providerPlugin": "awscloudformation",
