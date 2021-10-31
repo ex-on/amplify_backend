@@ -13,24 +13,25 @@
     },
     "categories": {
       "auth": {
-        "exon1cfb5546": {
-          "userPoolId": "ap-northeast-2_0cuUI8xGB",
-          "userPoolName": "users",
-          "webClientId": "4incgmnb4c9jo6otivd7e58b7m",
-          "nativeClientId": "4incgmnb4c9jo6otivd7e58b7m",
+        "exon91073b51": {
+          "userPoolId": "ap-northeast-2_EuYr8s0Rp",
+          "userPoolName": "exon-user-pool",
+          "webClientId": "6mf91uqnj2jj25et5hsrdbg8ur",
+          "nativeClientId": "6mf91uqnj2jj25et5hsrdbg8ur",
           "identityPoolId": "ap-northeast-2:41c2ddf8-aa50-4dc2-9ad7-116a96f7ee5b",
           "identityPoolName": "Exon",
           "allowUnauthenticatedIdentities": true,
           "authRoleArn": "arn:aws:iam::594107625744:role/Cognito_ExonAuth_Role",
           "authRoleName": "Cognito_ExonAuth_Role",
           "unauthRoleArn": "arn:aws:iam::594107625744:role/Cognito_ExonUnauth_Role",
-          "unauthRoleName": "Cognito_ExonUnauth_Role"
-        },
-        "exon": {
-          "userPoolId": "ap-northeast-2_EuYr8s0Rp",
-          "userPoolName": "exon-user-pool",
-          "webClientId": "6mf91uqnj2jj25et5hsrdbg8ur",
-          "nativeClientId": "6mf91uqnj2jj25et5hsrdbg8ur"
+          "unauthRoleName": "Cognito_ExonUnauth_Role",
+          "facebookAppId": "571035214121341"
+        }
+      },
+      "function": {
+        "exonKakaoLogin": {
+          "deploymentBucketName": "amplify-exon-staging-122334-deployment",
+          "s3Key": "amplify-builds/exonKakaoLogin-724e756d757735624973-build.zip"
         }
       }
     }

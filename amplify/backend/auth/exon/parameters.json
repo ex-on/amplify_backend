@@ -1,6 +1,0 @@
-{
-  "authSelections": "userPoolOnly",
-  "resourceName": "exon",
-  "serviceType": "imported",
-  "region": "ap-northeast-2"
-}
