@@ -1,31 +1,31 @@
 {
   "paths": [
     {
-      "name": "/kakao-login",
-      "lambdaFunction": "exonKakaoLogin",
+      "name": "/user/login",
+      "lambdaFunction": "kakaoLogin",
       "privacy": {
         "open": true
       },
-      "policyResourceName": "/kakao-login"
+      "policyResourceName": "/user/login"
     }
   ],
   "resourceName": "kakaoLogin",
   "apiName": "kakaoLogin",
   "functionArns": [
     {
-      "lambdaFunction": "exonKakaoLogin"
+      "lambdaFunction": "kakaoLogin"
     }
   ],
   "privacy": {
     "auth": 0,
     "unauth": 0,
-    "authRoleName": "amplify-exon-staging-122334-authRole",
-    "unAuthRoleName": "amplify-exon-staging-122334-unauthRole"
+    "authRoleName": "amplify-exon-staging-71719-authRole",
+    "unAuthRoleName": "amplify-exon-staging-71719-unauthRole"
   },
   "dependsOn": [
     {
       "category": "function",
-      "resourceName": "exonKakaoLogin",
+      "resourceName": "kakaoLogin",
       "attributes": [
         "Name",
         "Arn"

@@ -1,6 +1,6 @@
 {
   "authSelections": "identityPoolAndUserPool",
-  "resourceName": "exon91073b51",
+  "resourceName": "exon",
   "serviceType": "imported",
   "region": "ap-northeast-2"
 }

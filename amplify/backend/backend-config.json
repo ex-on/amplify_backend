@@ -1,6 +1,6 @@
 {
   "auth": {
-    "exon91073b51": {
+    "exon": {
       "service": "Cognito",
       "serviceType": "imported",
       "providerPlugin": "awscloudformation",
@@ -8,14 +8,8 @@
       "customAuth": false
     }
   },
-  "analytics": {
-    "Exon": {
-      "service": "Pinpoint",
-      "providerPlugin": "awscloudformation"
-    }
-  },
   "function": {
-    "exonKakaoLogin": {
+    "kakaoLogin": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -28,7 +22,7 @@
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "exonKakaoLogin",
+          "resourceName": "kakaoLogin",
           "attributes": [
             "Name",
             "Arn"

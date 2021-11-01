@@ -8,15 +8,15 @@
         },
     
     
-          "functionexonKakaoLoginName": {
+          "functionkakaoLoginName": {
             "Type": "String",
-            "Default": "functionexonKakaoLoginName"
+            "Default": "functionkakaoLoginName"
           },
 
           
-          "functionexonKakaoLoginArn": {
+          "functionkakaoLoginArn": {
             "Type": "String",
-            "Default": "functionexonKakaoLoginArn"
+            "Default": "functionkakaoLoginArn"
           }
 
           
@@ -82,7 +82,7 @@
             ],
             "paths": {
               
-              "/kakao-login": {
+              "/user/login": {
                 "options": {
                   "consumes": [
                     "application/json"
@@ -168,7 +168,7 @@
                             
                             {
 
-                                "Ref": "functionexonKakaoLoginArn"
+                                "Ref": "functionkakaoLoginArn"
                             },
                             
                             "/invocations"
@@ -181,7 +181,7 @@
                   }
                 }
               },
-              "/kakao-login/{proxy+}": {
+              "/user/login/{proxy+}": {
                 "options": {
                   "consumes": [
                     "application/json"
@@ -267,7 +267,7 @@
                           
                           {
 
-                            "Ref": "functionexonKakaoLoginArn"
+                            "Ref": "functionkakaoLoginArn"
                           },
                           
                           "/invocations"
@@ -324,12 +324,12 @@
       
         
 
-        "functionexonKakaoLoginPermissionkakaoLogin": {
+        "functionkakaoLoginPermissionkakaoLogin": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
                 "FunctionName": 
                     {
-                        "Ref":  "functionexonKakaoLoginName"
+                        "Ref":  "functionkakaoLoginName"
                     },
                     
                     "Action": "lambda:InvokeFunction",

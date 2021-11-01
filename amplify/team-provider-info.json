@@ -1,19 +1,19 @@
 {
   "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-exon-staging-122334-authRole",
-      "UnauthRoleArn": "arn:aws:iam::594107625744:role/amplify-exon-staging-122334-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::594107625744:role/amplify-exon-staging-122334-authRole",
+      "AuthRoleName": "amplify-exon-staging-71719-authRole",
+      "UnauthRoleArn": "arn:aws:iam::594107625744:role/amplify-exon-staging-71719-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::594107625744:role/amplify-exon-staging-71719-authRole",
       "Region": "ap-northeast-2",
-      "DeploymentBucketName": "amplify-exon-staging-122334-deployment",
-      "UnauthRoleName": "amplify-exon-staging-122334-unauthRole",
-      "StackName": "amplify-exon-staging-122334",
-      "StackId": "arn:aws:cloudformation:ap-northeast-2:594107625744:stack/amplify-exon-staging-122334/5fd81e70-358e-11ec-8761-06c565c7c590",
-      "AmplifyAppId": "d3nyhw5ecp7tob"
+      "DeploymentBucketName": "amplify-exon-staging-71719-deployment",
+      "UnauthRoleName": "amplify-exon-staging-71719-unauthRole",
+      "StackName": "amplify-exon-staging-71719",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:594107625744:stack/amplify-exon-staging-71719/c0176a70-3ae3-11ec-8ed2-0a90b90a65f8",
+      "AmplifyAppId": "d2spgcj6w86nmw"
     },
     "categories": {
       "auth": {
-        "exon91073b51": {
+        "exon": {
           "userPoolId": "ap-northeast-2_EuYr8s0Rp",
           "userPoolName": "exon-user-pool",
           "webClientId": "6mf91uqnj2jj25et5hsrdbg8ur",
@@ -29,9 +29,9 @@
         }
       },
       "function": {
-        "exonKakaoLogin": {
-          "deploymentBucketName": "amplify-exon-staging-122334-deployment",
-          "s3Key": "amplify-builds/exonKakaoLogin-724e756d757735624973-build.zip"
+        "kakaoLogin": {
+          "deploymentBucketName": "amplify-exon-staging-71719-deployment",
+          "s3Key": "amplify-builds/kakaoLogin-346c6642423338506968-build.zip"
         }
       }
     }

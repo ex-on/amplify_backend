@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "exonKakaoLogin",
+            "kakaoLogin",
             {
               "Fn::Join": [
                 "",
                 [
-                  "exonKakaoLogin",
+                  "kakaoLogin",
                   "-",
                   {
                     "Ref": "env"
@@ -78,7 +78,7 @@
             "Arn"
           ]
         },
-        "Runtime": "python3.8",
+        "Runtime": "nodejs14.x",
         "Layers": [],
         "Timeout": 25
       }
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "exonLambdaRole8238abaa",
+            "exonLambdaRolef61b4af6",
             {
               "Fn::Join": [
                 "",
                 [
-                  "exonLambdaRole8238abaa",
+                  "exonLambdaRolef61b4af6",
                   "-",
                   {
                     "Ref": "env"
@@ -157,6 +157,26 @@
                     "lambda": {
                       "Ref": "LambdaFunction"
                     }
+                  }
+                ]
+              }
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "cognito-idp:SignUp"
+              ],
+              "Resource": {
+                "Fn::Sub": [
+                  "arn:aws:cognito-idp:${region}:${account}:userpool/${userpoolId}",
+                  {
+                    "region": {
+                      "Ref": "AWS::Region"
+                    },
+                    "account": {
+                      "Ref": "AWS::AccountId"
+                    },
+                    "userpoolId": "ap-northeast-2_EuYr8s0Rp"
                   }
                 ]
               }
