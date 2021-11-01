@@ -10,10 +10,10 @@ See the License for the specific language governing permissions and limitations 
 
 
 var express = require('express')
-var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
-const axios = require('axios');
+const axios = require('axios').default;
 const AWS = require('aws-sdk');
+const {aws_user_pools_id, aws_user_pools_web_client_id} = require('amplify/backend/aws-exports.js');
 const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({
   apiVersion: '2016-04-18',
   region: 'ap-northeast-2',
@@ -21,7 +21,7 @@ const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({
 
 // declare a new express app
 var app = express()
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
 // Enable CORS for all methods
@@ -72,9 +72,9 @@ app.post('/user/login', async function(req, res) {
     return;
   }
   const GroupName = 'Kakao';
-  const UserPoolId = `{Cognito's User Pool id}`;  // aws-exports.js의 "aws_user_pools_id"
-  const ClientId = `{Cognito's Web client id}`; // aws-exports.js "aws_user_pools_web_client_id"
-  const Username = 'kakao_' + data.id
+  const UserPoolId = aws_user_pools_id;  // aws-exports.js의 "aws_user_pools_id"
+  const ClientId = aws_user_pools_web_client_id; // aws-exports.js "aws_user_pools_web_client_id"
+  const Username = 'kakao_' + data.id;
   const newUserParam = {
     ClientId,
     Username,

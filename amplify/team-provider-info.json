@@ -31,7 +31,7 @@
       "function": {
         "kakaoLogin": {
           "deploymentBucketName": "amplify-exon-staging-71719-deployment",
-          "s3Key": "amplify-builds/kakaoLogin-346c6642423338506968-build.zip"
+          "s3Key": "amplify-builds/kakaoLogin-6b5a6a333665546c3130-build.zip"
         }
       }
     }
