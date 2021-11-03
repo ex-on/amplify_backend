@@ -10,10 +10,9 @@ See the License for the specific language governing permissions and limitations 
 
 
 var express = require('express')
+const axios = require('axios').default
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
-const axios = require('axios').default;
 const AWS = require('aws-sdk');
-const {aws_user_pools_id, aws_user_pools_web_client_id} = require('amplify/backend/aws-exports.js');
 const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({
   apiVersion: '2016-04-18',
   region: 'ap-northeast-2',
@@ -56,7 +55,7 @@ app.post('/user/login', async function(req, res) {
   const kakaoAuthUrl = 'https://kapi.kakao.com/v2/user/me';
   const kakaoAuthOptions = {
     headers: {
-      Authorization: `Bearer ${access_token}`,
+      Authorization: `Bearer ${access_token}`
     },
   };
   const axiosRes = await axios.get(kakaoAuthUrl, kakaoAuthOptions);
@@ -67,18 +66,20 @@ app.post('/user/login', async function(req, res) {
       success: 'post call failed!',
       url: req.url,
       body: req.body,
-      axiosRes: axiosRes.data,
+      axiosRes: axiosRes.data
     });
     return;
   }
   const GroupName = 'Kakao';
-  const UserPoolId = aws_user_pools_id;  // aws-exports.js의 "aws_user_pools_id"
-  const ClientId = aws_user_pools_web_client_id; // aws-exports.js "aws_user_pools_web_client_id"
-  const Username = 'kakao_' + data.id;
+  const UserPoolId = 'ap-northeast-2_EuYr8s0Rp';  // aws-exports.js의 "aws_user_pools_id"
+  const ClientId = '6mf91uqnj2jj25et5hsrdbg8ur'; // aws-exports.js "aws_user_pools_web_client_id"
+  // const Username = 'kakao_' + data.id;
+  const Username = data.kakao_account.email;
+  console.log(Username);
   const newUserParam = {
     ClientId,
     Username,
-    Password: data.id.toString(),
+    Password: 'Kakao' + data.id.toString() + '!',
     ClientMetadata: {
       UserPoolId,
       Username,
@@ -90,8 +91,8 @@ app.post('/user/login', async function(req, res) {
         Value: data.kakao_account.email,
       },
       {
-        Name: 'name' /* required */,
-        Value: Username,
+        Name: 'name',
+        Value: 'kakao_' + data.id,
       },
     ],
   };
@@ -102,7 +103,7 @@ app.post('/user/login', async function(req, res) {
     success: 'post call succeed!',
     url: req.url,
     body: req.body,
-    signUpRes,
+    signUpRes
   });
 });
 
