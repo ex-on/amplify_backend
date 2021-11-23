@@ -96,14 +96,45 @@ app.post('/user/login', async function(req, res) {
       },
     ],
   };
-  const signUpRes = await cognitoidentityserviceprovider.signUp(newUserParam).promise();
-  console.log('signUpRes', signUpRes)
+  
+  const getSignUpRes = async () => {
+    try {
+    const signUpRes = await cognitoidentityserviceprovider.signUp(newUserParam).promise();
+    return signUpRes;
+  } catch (e) {
+    console.log(e);
+      switch (e.toString().split(':')[0]) {
+        case "UsernameExistsException":
+          return true;
+        default:
+          throw e;
+      }
+  }}
+
+  signUpRes = await getSignUpRes();
+
+  console.log('signUpRes', signUpRes)// accessToken, idToken, refreshToken
+    
+  var signInRes = await cognitoidentityserviceprovider.adminInitiateAuth(
+    {
+      "AuthFlow": "ADMIN_NO_SRP_AUTH",
+      "ClientId": ClientId,
+      "UserPoolId": UserPoolId,
+      "AuthParameters": {
+        "USERNAME": Username,
+        "PASSWORD": 'Kakao' + data.id.toString() + '!',
+      }
+    }
+  ).promise();
+
+  console.log('signInRes: ', signInRes);
 
   res.json({
     success: 'post call succeed!',
     url: req.url,
     body: req.body,
-    signUpRes
+    signUpRes,
+    AuthenticationResult: signInRes["AuthenticationResult"],
   });
 });
 
